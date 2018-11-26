@@ -1,0 +1,30 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+.allbutton{
+  background-color:#AAAAAA;
+  border-radius:5px;
+  border:none;
+  padding:5px 5px;
+  margin: 5px;
+  font-size: 14px;
+  font-weight:bolder;
+}
+.addbutton{
+  border-radius:5px;
+  font-weight:bolder;
+}
+.text{
+  border-radius:3px;
+}
+.font{
+  font-size:30px;
+  font-style:italic;
+  
+}
+.hidden{
+  display: none;
+}

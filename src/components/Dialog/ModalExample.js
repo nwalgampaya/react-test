@@ -1,0 +1,63 @@
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { Popover, PopoverBody } from 'reactstrap';
+import {Button, DropdownButton, MenuItem, Modal,  OverlayTrigger, Tooltip} from 'react-bootstrap';
+
+
+export default class ModalExample extends React.Component {
+    
+    constructor(props, context) {
+        super(props, context);
+    this.state = {
+        open: false,
+        textValue:'test'
+      };
+      this.handleShow = this.handleShow.bind(this);
+    }
+
+    handleShow() {
+        this.setState({ open: true });
+      }
+      
+     componentDidMount(){
+        console.log("in sample")
+      }
+    render(){
+      let closeModal = () => this.setState({ open: false })
+  
+      let saveAndClose = () => {
+        // api.saveData()
+        //   .then(() => this.setState({ open: false }))
+      }
+      return (
+        <div>
+          {/* <button type='button'  onClick={this.handleShow}>Launch modal</button> */}
+  
+          <Modal
+            // show={this.state.open}
+            show={true}
+            onHide={closeModal}
+            aria-labelledby="ModalHeader"
+          >
+            <Modal.Header closeButton>
+              <Modal.Title id='ModalHeader'>A Title Goes here</Modal.Title>
+            </Modal.Header>
+            <Modal.Body>
+              <p>Some Content here</p>
+            </Modal.Body>
+            <Modal.Footer>
+              // If you don't have anything fancy to do you can use
+              // the convenient `Dismiss` component, it will
+              // trigger `onHide` when clicked
+              {/* <Modal.Dismiss className='btn btn-default'>Cancel</Modal.Dismiss> */}
+  
+              // Or you can create your own dismiss buttons
+              <button className='btn btn-primary' onClick={saveAndClose}>
+                Save
+              </button>
+            </Modal.Footer>
+          </Modal>
+        </div>
+      )
+    }
+  }
